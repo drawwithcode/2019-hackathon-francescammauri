@@ -19,12 +19,13 @@ function resetSketch() {
   music.play();
   analyzer = new p5.Amplitude();
   analyzer.setInput(music);
-}
+  }
 function draw() {
   background("black")
   var volume = 0;
   volume = analyzer.getLevel();
   volume = map( volume, 0,1,1000,2000);
+  music.rate(1.5)
   translate(200,-200);
 scale(1.5);
   push()
