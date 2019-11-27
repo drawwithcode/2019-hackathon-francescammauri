@@ -6,7 +6,7 @@ function preload(){
 
   music = loadSound("./assets/TG1_new.mp3");
   earth = loadImage("./assets/earth.png");
-  antenna = loadImage("./assets/antenna4.png");
+  antenna = loadImage("./assets/antennabianca.png");
 }
 
 function setup() {
@@ -21,7 +21,7 @@ function resetSketch() {
   analyzer.setInput(music);
 }
 function draw() {
-  background("grey")
+  background("black")
   var volume = 0;
   volume = analyzer.getLevel();
   volume = map( volume, 0,1,1000,2000);
@@ -29,11 +29,11 @@ function draw() {
 scale(1.5);
   push()
   imageMode(CENTER);
-  image(antenna,0 , 400, 300, 600);
+  image(earth, 10 , 290, volume/8, volume/8 );
   pop();
   push()
   imageMode(CENTER);
-  image(earth, 10 , 290, volume/8, volume/8 );
+  image(antenna,0 , 400, 300, 600);
   pop();
   noFill()
   ellipse(10,290, volume/8, volume/8);
